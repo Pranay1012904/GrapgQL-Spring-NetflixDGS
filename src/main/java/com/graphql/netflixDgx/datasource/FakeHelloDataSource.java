@@ -5,19 +5,17 @@ import com.netflix.dgsRev.generated.types.Hello;
 import jakarta.annotation.PostConstruct;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@Configuration
 public class FakeHelloDataSource {
 
+    @Autowired
     private Faker faker;
-
-    public FakeHelloDataSource(Faker faker) {
-        this.faker = faker;
-    }
 
     public static final List<Hello> HELLO_LIST = new ArrayList<>();
 
