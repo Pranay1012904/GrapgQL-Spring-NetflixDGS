@@ -1,9 +1,6 @@
 package com.graphql.netflixDgx.datasource;
 
-import com.netflix.dgsRev.generated.types.Address;
-import com.netflix.dgsRev.generated.types.Author;
-import com.netflix.dgsRev.generated.types.MobileApp;
-import com.netflix.dgsRev.generated.types.ReleaseHistory;
+import com.netflix.dgsRev.generated.types.*;
 import jakarta.annotation.PostConstruct;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +42,7 @@ public class FakeMobileAppDataSource {
                     .downloaded(ThreadLocalRandom.current().nextInt(10,999))
                     .releaseDate(LocalDate.now())
                     .homepage(new URL("http://"+faker.internet().url()))
+                    .category(MobileAppCategory.values()[faker.random().nextInt(MobileAppCategory.values().length)])
                     .build();
             MOBILE_APP_LIST.add(mobileApp);
         }
