@@ -6,4 +6,5 @@ type Query{
     oneHello:Hello
     books(author:String):[Book]
     mobileApps(mobileAppsFilter:MobileAppFilter):[MobileApp]
+    pets(petFilter:PetType):[Pet]
 }

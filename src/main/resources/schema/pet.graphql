@@ -1,0 +1,28 @@
+enum PetFoodType{
+    HERBIVORE, CARNIVORE, OMNIVORE
+}
+
+interface Pet{
+    name:String!
+    foodType:PetFoodType!
+    breed:String!
+}
+
+type Dog implements Pet{
+    name:String!
+    foodType:PetFoodType!
+    breed:String!
+    size:String
+    coatLength:String
+}
+
+type Cat implements Pet{
+    name:String!
+    foodType:PetFoodType!
+    breed:String!
+    registry:String
+}
+
+input PetType{
+    petType:String
+}
