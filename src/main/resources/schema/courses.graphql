@@ -14,3 +14,10 @@ type Query{
     pets(petFilter:PetType):[Pet]
     smartSearch(keyword:String): [SmartSearchResult]
 }
+
+type Mutation{
+    addHello(helloInput:HelloInput!): Int
+    replaceHelloInputText(helloInput:HelloInput!):[Hello]
+    #replaceHello(number:Int, newText:String!): [Hello]
+    deleteHello(number: Int!): Int
+}
