@@ -24,7 +24,7 @@ public class FakePetDataResolver {
     }
 
     private boolean filterPet(Pet p,String f){
-        if(p.getClass().toString().equalsIgnoreCase(f) ){
+        if(p.getClass().getSimpleName().equalsIgnoreCase(f) ){
             return true;
         }else{
             return false;

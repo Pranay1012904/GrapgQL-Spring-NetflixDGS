@@ -26,7 +26,7 @@ public class FakeHelloDataSource {
                     .text(faker.text().toString())
                     .randomNumber(faker.random().nextInt(1, 20))
                     .build();
-            HELLO_LIST.add(hello);
+            FakeHelloDataSource.HELLO_LIST.add(hello);
         }
     }
 

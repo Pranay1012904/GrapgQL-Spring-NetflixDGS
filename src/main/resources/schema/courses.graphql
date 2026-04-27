@@ -1,10 +1,23 @@
 scalar Url
 scalar Date
 scalar NonNegativeInt
+
+"""UNION IMPLEMENTATION"""
+union SmartSearchResult = Book | Hello
+
+
 type Query{
     allHellos:[Hello]
     oneHello:Hello
     books(author:String):[Book]
     mobileApps(mobileAppsFilter:MobileAppFilter):[MobileApp]
     pets(petFilter:PetType):[Pet]
+    smartSearch(keyword:String): [SmartSearchResult]
+}
+
+type Mutation{
+    addHello(helloInput:HelloInput!): Int
+    replaceHelloInputText(helloInput:HelloInput!):[Hello]
+    #replaceHello(number:Int, newText:String!): [Hello]
+    deleteHello(number: Int!): Int
 }
